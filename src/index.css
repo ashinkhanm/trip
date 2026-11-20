@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Plus Jakarta Sans', 'Manjari', sans-serif;
+  }
+}
+
+/* Custom styles for snow & icy meme aesthetic */
+.comic-border {
+  box-shadow: 4px 4px 0px #0284c7;
+}
+
+.comic-border-lg {
+  box-shadow: 6px 6px 0px #0369a1;
+}
+
+.comic-border-ice {
+  box-shadow: 5px 5px 0px #38bdf8;
+}
+
+.comic-border-yellow {
+  box-shadow: 5px 5px 0px #FFDE00;
+}
+
+.ice-card {
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(16px);
+  border: 2px solid rgba(56, 189, 248, 0.35);
+  box-shadow: 0 10px 35px -5px rgba(14, 165, 233, 0.2), inset 0 0 15px rgba(255, 255, 255, 0.05);
+}
+
+.ice-glow {
+  box-shadow: 0 0 25px rgba(56, 189, 248, 0.35);
+}
+
+/* Snowfall Animation */
+@keyframes snowfall {
+  0% {
+    transform: translateY(-10vh) translateX(0) rotate(0deg);
+    opacity: 0.9;
+  }
+  50% {
+    transform: translateY(50vh) translateX(25px) rotate(180deg);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(105vh) translateX(-20px) rotate(360deg);
+    opacity: 0.15;
+  }
+}
+
+.snowflake {
+  position: fixed;
+  top: -20px;
+  color: #bae6fd;
+  user-select: none;
+  pointer-events: none;
+  z-index: 15;
+  animation: snowfall linear infinite;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+}
+
+/* Floating emojis animation */
+@keyframes floatUp {
+  0% {
+    transform: translateY(100vh) rotate(0deg);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-20vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.floating-bg-item {
+  position: fixed;
+  bottom: -50px;
+  user-select: none;
+  pointer-events: none;
+  z-index: 0;
+  animation: floatUp 15s linear infinite;
+}
+
+/* Custom winter scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #0b1329;
+}
+::-webkit-scrollbar-thumb {
+  background: #0284c7;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #38bdf8;
+}
